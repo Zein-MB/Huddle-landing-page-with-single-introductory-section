@@ -1,0 +1,186 @@
+/* Variables */
+
+$violet: hsl(257, 40%, 49%);
+$softMagenta: hsl(300, 69%, 71%);
+$headingFont: 'Poppins', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
+
+/* Global rules */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: $bodyFont;
+}
+
+body {
+    height: 105vh;
+    background-color: $violet;
+    background-image: url(../images/bg-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    font-family: $bodyFont;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .img-sect {
+        padding: 4.2em 4.5em;
+        display: grid;
+        grid-gap: 75px;
+
+        .logo {
+            width: 13vw;
+            max-width: 100%;
+        }
+    }
+
+    .text-sect {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        margin-top: 5em;
+
+        .text {
+            h1 {
+                font-family: $headingFont;
+                font-size: 38px;
+                font-weight: 600;
+                max-width: 30vw;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.7;
+                max-width: 34vw;
+                margin-top: 1em;
+            }
+
+        }
+
+        button {
+            margin-top: 1.3em;
+            padding: 1em 4.5em;
+            width: fit-content;
+            font-size: 16px;
+            background-color: #fff;
+            color: $violet;
+            cursor: pointer;
+            box-shadow: 0 5px 5px 0 rgb(0 0 0 / 23%);
+            border: none;
+            border-radius: 50px;
+            transition: .3s;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            -ms-transition: .3s;
+            -o-transition: .3s;
+
+            &:hover {
+                background-color: $softMagenta;
+                color: #fff;
+            }
+        }
+
+        ul {
+            list-style: none;
+            position: absolute;
+            bottom: 0;
+            right: 13em;
+            display: flex;
+            gap: 10px;
+
+            li {
+                width: 32px;
+                height: 32px;
+                font-size: 13px;
+                border: 1px solid #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: .3s;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                -webkit-transition: .3s;
+                -moz-transition: .3s;
+                -ms-transition: .3s;
+                -o-transition: .3s;
+
+                &:hover {
+                    width: 30px;
+                    height: 30px;
+                    border-color: hsl(300, 100%, 59%);
+                    color: hsl(300, 100%, 59%);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        background-image: url(../images/bg-mobile.svg);
+        background-size: contain;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+
+        .img-sect {
+            padding: 0 !important;
+            gap: 48px;
+
+            .logo {
+                width: 33vw;
+            }
+
+            .main-bg {
+                max-width: 100%;
+            }
+        }
+
+        .text-sect {
+            text-align: center;
+            align-items: center;
+            margin-top: 3em;
+
+            .text {
+                h1 {
+                    max-width: none;
+                    font-size: 23px;
+                }
+
+                p {
+                    max-width: none;
+                    font-size: 13.5px;
+                }
+            }
+
+            button {
+                padding: 10px 60px;
+                font-size: 13.5px;
+            }
+
+            ul {
+                right: unset;
+            }
+        }
+    }
+}
